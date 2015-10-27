@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<head>
+	<title>Recipe 1.12</title>
+	<style type="text/css">
+	.rightformatted
+	{
+		text-align: right;
+	}
+	</style>
+	<script>
+		window.onload = function(){
+			var prefLineLength = 20;
+			var oldStr = "This is a string";
+
+			var diff = prefLineLength - oldStr.length;
+			var filler = '&nbsp;';//&#160
+
+			for(var i = 0 ; i< diff; i++){
+				oldStr = filler +oldStr;
+			}
+
+			document.getElementById("result").innerHTML = oldStr;
+
+			var num = 123.55;
+			var item = document.getElementById("item");
+
+			//create text node and paragraph element
+			var txt = document.createTextNode(num);
+			var p = document.createElement("p");
+
+			//attach text node to paragraph
+			p.appendChild(txt);
+			p.setAttribute("class","rightformatted");
+
+			//append paragraph to document element
+			item.appendChild(p);
+		}
+	</script>
+</head>
+<body>
+<div id="result"></div>
+<div id="item"></div>
+</body>
+</html>
